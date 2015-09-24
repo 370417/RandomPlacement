@@ -17,6 +17,10 @@ public class Main {
 		System.out.println(Arrays.toString(method4(array4, 3)));
 		
 		System.out.println(Arrays.toString(testMethod1(8, 4)));
+		
+		System.out.println(Arrays.toString(testMethod2(8, 4)));
+		
+		System.out.println(Arrays.toString(testMethod4(8, 4)));
 	}
 	
 	/**
@@ -31,6 +35,50 @@ public class Main {
 		for (int i = 0; i < trials; i++) {
 			int[] array = newArray(length);
 			int[] finalArray = method1(array, itemCount);
+			for (int j = 0; j < probabilities.length; j++) {
+				probabilities[j] += finalArray[j];
+			}
+		}
+		for (int i = 0; i < length; i++) {
+			probabilities[i] /= trials;
+		}
+		return probabilities;
+	}
+	
+	/**
+	 * Test randomness of method2
+	 * @param length The length of the array
+	 * @param itemCount The number of items to place
+	 * @return The chance of an item to be found at each point in the array
+	 */
+	private static double[] testMethod2(int length, int itemCount) {
+		int trials = 10000000;
+		double[] probabilities = new double[length];
+		for (int i = 0; i < trials; i++) {
+			int[] array = newArray(length);
+			int[] finalArray = method2(array, itemCount);
+			for (int j = 0; j < probabilities.length; j++) {
+				probabilities[j] += finalArray[j];
+			}
+		}
+		for (int i = 0; i < length; i++) {
+			probabilities[i] /= trials;
+		}
+		return probabilities;
+	}
+	
+	/**
+	 * Test randomness of method4
+	 * @param length The length of the array
+	 * @param itemCount The number of items to place
+	 * @return The chance of an item to be found at each point in the array
+	 */
+	private static double[] testMethod4(int length, int itemCount) {
+		int trials = 10000000;
+		double[] probabilities = new double[length];
+		for (int i = 0; i < trials; i++) {
+			int[] array = newArray(length);
+			int[] finalArray = method4(array, itemCount);
 			for (int j = 0; j < probabilities.length; j++) {
 				probabilities[j] += finalArray[j];
 			}
