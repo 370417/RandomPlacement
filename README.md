@@ -23,4 +23,4 @@ Methods 1, and 5 gave even distributions. After I changed the probabilities, met
 I ran each method 10 million times with placing 4 objects in an array of length 8. There was variation in time each time I ran the code, but the ranking was always the same. From fastest to slowest with example times:
 Method 3 (4186ms), Method 5 with ArrayList (4490ms), Method 1 (4514ms), and Method 5 with LinkedList (4840ms).
 
-![Image Alt](https://duckduckgo.com/assets/badges/logo_square.64.png)
+![Image Alt]()
