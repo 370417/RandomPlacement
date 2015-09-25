@@ -24,6 +24,8 @@ I ran each method 10 million times with placing 4 objects in an array of length 
 Method 3 (4186ms), Method 5 with ArrayList (4490ms), Method 1 (4514ms), and Method 5 with LinkedList (4840ms).
 
 Then I compared speeds with placing 33 objects in an array of length 121 since that is what I'll do for Hivolts. I ran each method 100 thousand times.
+
 ![Graph](http://i60.tinypic.com/15guwdt.png)
+
 This time, from fastest to slowest median:
 Method 5 with LinkedList (600.5ms), Method 5 with ArrayList (628.5ms), Method 3 (641.5ms), Method 1 (725.5ms).
