@@ -29,3 +29,9 @@ Then I compared speeds with placing 33 objects in an array of length 121 since t
 
 This time, from fastest to slowest median:
 Method 5 with LinkedList (600.5ms), Method 5 with ArrayList (628.5ms), Method 3 (641.5ms), Method 1 (725.5ms).
+
+## Conclusions
+It appears that Method 5 using linked lists is best suited for Hivolts. Based on the difference between 4 objects in an 8 element array and 33 objects in a 121 element array, method 5 is relatively slower with higher object density. It would make sense that the performance of method 1 is unaffected by how many objects are placed becuase shuffling does not care about the contents of the array. Method 3 might actually become more efficient the more dense the array is because it might have a higher chance of terminating earlier.
+
+### Potential Optimizations
+Currently, method 5 using linked lists iterates through a random section of the list for every object that is placed. Instead, a list of sorted random numbers could be generated, and then the code would only have to iterate through the list once to place all the objects. This was not implemented because of the convenience of using the methods provided by the existing implementation in java.util.LinkedList.
