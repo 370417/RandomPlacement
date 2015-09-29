@@ -1,6 +1,7 @@
 import java.awt.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -311,7 +312,7 @@ public class Main {
 	private static Object[] method5(int[] array, int itemCount) {
 		LinkedList<Integer> list = new LinkedList<Integer>();
 		for (int i = itemCount; i < array.length; i++) {
-			list.add(0);
+			list.addFirst(0);
 		}
 		for (int i = 1; i <= itemCount; i++) {
 			int index = (int) Math.floor((array.length - itemCount + i) * Math.random());
@@ -319,7 +320,7 @@ public class Main {
 		}
 		return list.toArray();
 	}
-	private static Object[] method5a(int[] array, int itemCount) {
+	private static Integer[] method5a(int[] array, int itemCount) {
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		for (int i = itemCount; i < array.length; i++) {
 			list.add(0);
@@ -328,7 +329,8 @@ public class Main {
 			int index = (int) Math.floor((array.length - itemCount + i) * Math.random());
 			list.add(index, 1);
 		}
-		return list.toArray();
+		Integer[] a = new Integer[array.length];
+		return list.toArray(a);
 	}
 	
 	/**
